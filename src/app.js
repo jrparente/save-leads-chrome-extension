@@ -4,6 +4,26 @@ const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 const deleteBtn = document.getElementById("delete-btn");
+const tabBtn = document.getElementById("tab-btn");
+
+tabBtn.addEventListener("click", function () {
+  chrome.tabs.query(
+    {
+      active: true,
+      currentWindow: true,
+    },
+    function (tabs) {
+      // and use that tab to fill in out title and url
+      let tab = tabs[0];
+      console.log(tab.url);
+      alert(tab.url);
+    }
+  );
+
+  myLeads.push(tabs[0].url);
+  localStorage.setItem("myLeads", JSON.stringify(myLeads));
+  display(myLeads);
+});
 
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage;
