@@ -8,6 +8,7 @@
 body {
   padding: 16px;
   font-family: "Inter", sans-serif;
+  min-width: 400px;
 }
 
 input {
@@ -24,4 +25,19 @@ button {
   padding: 10px 20px;
   border: none;
   font-weight: bold;
+  cursor: pointer;
+}
+
+ul {
+  margin-top: 20px;
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin-top: 5px;
+}
+
+li a {
+  color: #5f9341;
 }
