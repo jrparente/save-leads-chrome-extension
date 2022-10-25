@@ -13,16 +13,11 @@ tabBtn.addEventListener("click", function () {
       currentWindow: true,
     },
     function (tabs) {
-      // and use that tab to fill in out title and url
-      let tab = tabs[0];
-      console.log(tab.url);
-      alert(tab.url);
+      myLeads.push(tabs[0].url);
+      localStorage.setItem("myLeads", JSON.stringify(myLeads));
+      display(myLeads);
     }
   );
-
-  myLeads.push(tabs[0].url);
-  localStorage.setItem("myLeads", JSON.stringify(myLeads));
-  display(myLeads);
 });
 
 if (leadsFromLocalStorage) {
